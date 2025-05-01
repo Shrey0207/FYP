@@ -106,7 +106,148 @@ const DashSecondComponent: React.FC<DashComponentProps> = ({ route }) => {
           </Box>
         </Box>
       </Paper>
+      {/* Glucose Concentration Card */}
+    <Paper
+      className="w-[515px] h-[340px] max-[1440px]:w-full max-[768px]:h-auto"
+      sx={{
+        borderRadius: "20px",
+        background:
+          "linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%)",
+        padding: "22px",
+        boxShadow: "rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem",
+      }}
+    >
+      <Box
+        sx={{
+          marginBottom: "40px",
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
+      >
+        <Typography sx={{ fontSize: "18px", fontWeight: "600", color: "white" }}>
+          {t("Glucose Concentration")}
+        </Typography>
+        <Box
+          sx={{
+            background: "#22234b",
+            width: "37px",
+            height: "37px",
+            borderRadius: "10px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography sx={{ color: "#0075ff" }}>
+            <SlOptions />
+          </Typography>
+        </Box>
+      </Box>
 
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        {/* Details Section */}
+        <Box sx={{ width: "235px", height: "210px" }}>
+          <Box
+            sx={{
+              width: "100%",
+              paddingY: "20px",
+              paddingX: "22px",
+              marginBottom: "20px",
+              background: "#070c26",
+              borderRadius: "20px",
+            }}
+          >
+            <Typography sx={{ fontSize: "14px", color: "#a0aec0" }}>
+              {t("Avg. Value")}
+            </Typography>
+            <Typography sx={{ fontSize: "18px", color: "white", fontWeight: "600" }}>
+              92 mg/dL
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              width: "100%",
+              paddingY: "20px",
+              paddingX: "22px",
+              background: "#070c26",
+              borderRadius: "20px",
+            }}
+          >
+            <Typography sx={{ fontSize: "14px", color: "#a0aec0" }}>
+              {t("Normal Range")}
+            </Typography>
+            <Typography sx={{ fontSize: "18px", color: "white", fontWeight: "600" }}>
+              70 - 110 mg/dL
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* Circular Graph Section */}
+        <Box sx={{ position: "relative", display: "inline-flex" }}>
+          <CircularProgress
+            variant="determinate"
+            value={80}
+            size={200}
+            thickness={4}
+            sx={{ color: "rgba(10, 10, 10, 0.1)" }}
+          />
+          <CircularProgress
+            variant="determinate"
+            value={80}
+            size={200}
+            thickness={4}
+            sx={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              color: "transparent",
+              "& .MuiCircularProgress-circle": {
+                stroke: "url(#glucoseProgressGradient)",
+              },
+              rotate: "30deg",
+            }}
+          />
+          <svg width={0} height={0}>
+            <defs>
+              <linearGradient id="glucoseProgressGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#06b189" />
+                <stop offset="130%" stopColor="rgba(7, 138, 94, 0.11)" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "200px",
+              height: "200px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Typography sx={{ color: "#a0aec0", fontSize: "14px", fontWeight: "600" }}>
+              {t("Concentration")}
+            </Typography>
+            <Typography sx={{ color: "white", fontSize: "48px", fontWeight: "600" }}>
+              9.3
+            </Typography>
+            <Typography sx={{ color: "#a0aec0", fontSize: "14px", fontWeight: "600" }}>
+              mg/dL
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+    </Paper>
       {/* Battery Status Card */}
       <Paper
         className="w-[382px] h-[340px] max-[1440px]:w-full"
