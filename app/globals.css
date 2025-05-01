@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  /* background: #041c4a; */
+  color: white;
+  background-image: url(/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+/* Firefox */
+html, body {
+  overflow: hidden;
+  height: 100%;
+  scrollbar-width: none;
+}
+/* For all scrollable elements */
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.text{
+  color: linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%);
+}
+.button{
+  background: linear-gradient(310deg, rgb(0, 117, 255), rgb(33, 212, 253));;
+}
+.DashSecond{
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+}
+.MuiChartsLegend-root{
+  display: none;
+}
+/* .MuiChartsAxis-directionX{
+  display: none;
+} */
+.dashboard::-webkit-scrollbar{
+width: 0px;
+}
+.MuiChartsAxis-line{
+  display: none;
+}
+.MuiBarElement-series-auto-generated-id-0{
+  /* display: none; */
+  width: 30px;
+}
+
+.MuiMarkElement-series-auto-generated-id-0{
+  display: none;
+}
+.MuiMarkElement-series-auto-generated-id-1{
+display: none
+}
+.css-iyvwpn-MuiChartsSurface-root{
+  background: linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%);
+  border-radius: 20px;
+}
+
+ @media only screen and (max-width: 1440px) {
+  #dashFirstDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .css-1yia2fa-MuiPaper-root{
+    width: 100%;
+  }
+  .DashSecond{
+    flex-direction: column;
+  }
+  .secondBoxOne{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .secondBoxTwo{
+    width: 100%;
+  }
+  .secondBoxThree{
+    width: 100%;
+  }
+  .thirdBoxOne{
+    width: 100%;
+  }
+  .thirdBoxTwo{
+    width: 100%;
+  }
+.sidebar{
+  background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35) 76.65%);
+}
+ }
+
+ @media only screen and (max-width: 1024px) {
+  .css-111q8q3{
+    flex-direction: column;
+  }
+  .css-rf8k6c{
+    flex-direction: column;
+  }
+  .dashTable{
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .billingMainDiv{
+    flex-direction: column;
+    width: 100%;
+  }
+  .billingMainDivTwo{
+    width: 100%;
+  }
+  .billingDivOne{
+    width: 100%;
+  }
+  .billingDivTwo{
+    width: 100%;
+  }
+ }
+
+
+ @media only screen and (max-width: 768px) {
+  #dashFirstDiv{
+    grid-template-columns: 1fr;
+  }
+  .secondBoxThree{
+    height: auto;
+  }
+  .css-1lekzkb{
+    flex-direction: column;
+  }
+  .lastBoxTwo{
+    width: 100%;
+  }
+  .lastBoxOne{
+    width: 100%;
+  }
+  .css-14y0q8l{
+    flex-direction: column;
+  }
+  .cardDetail{
+    margin-top: 40px;
+  }
+ }
