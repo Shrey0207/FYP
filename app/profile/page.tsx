@@ -30,7 +30,7 @@ const Profile = () => {
             <Typography
               sx={{ fontSize: "18px", fontWeight: "600", color: "white" }}
             >
-              Mark Johnson
+              Piyush Kumar
             </Typography>
             <Typography sx={{ fontSize: "14px", color: "#a0aec0" }}>
               mark@simmmple.com

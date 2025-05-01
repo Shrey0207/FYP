@@ -77,7 +77,7 @@ const MyComponent = styled("div")({
               fontWeight: "bold",
             }}
           >
-            $53,000
+            8uA
           </Typography>
         </MyComponent>
       </Box>
@@ -131,7 +131,7 @@ const MyComponent = styled("div")({
               fontWeight: "bold",
             }}
           >
-            23,000
+            -36V
           </Typography>
         </MyComponent>
       </Box>
@@ -185,7 +185,7 @@ const MyComponent = styled("div")({
               fontWeight: "bold",
             }}
           >
-            +3,462
+            5mM
           </Typography>
         </MyComponent>
       </Box>
@@ -239,7 +239,7 @@ const MyComponent = styled("div")({
               fontWeight: "bold",
             }}
           >
-            $103,430
+            9uA
           </Typography>
         </MyComponent>
       </Box>
