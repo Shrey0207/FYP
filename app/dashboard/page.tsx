@@ -13,7 +13,7 @@ const Dashboard: React.FC = () => {
     style={{
       transition: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)",
     }}>
-      <DashFirstComponent  route="/dashboard"/>
+      {/* <DashFirstComponent  route="/dashboard"/> */}
       <DashSecondComponent route= "/dashboard"/>
       <DashThirdComponent route="/dashboard"/>
     </div>
