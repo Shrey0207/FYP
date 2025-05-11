@@ -99,7 +99,7 @@ export default function CalibrationPage() {
 
       <Grid container spacing={4}>
         {/* Form Section */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={4}>
           <Paper
             elevation={3}
             sx={{
@@ -229,7 +229,7 @@ export default function CalibrationPage() {
         </Grid>
 
         {/* Graph Section */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={8}>
           <Paper
             elevation={3}
             sx={{
@@ -243,7 +243,7 @@ export default function CalibrationPage() {
               Scope Display
             </Typography>
             <Box sx={{ width: '100%', height: isMobile ? '300px' : '400px' }}>
-             // Corrected Layout for Plot Component
+             
             <Plot
             data={[
                 {
