@@ -1,9 +1,10 @@
 import { FaHome } from "react-icons/fa";              // Dashboard
 import { GiHistogram } from "react-icons/gi";         // Calibration
-import { MdScience } from "react-icons/md";           // Experimentation
+import { MdScience } from "react-icons/md";           // Cyclic Voltammetry
 import { MdHistory } from "react-icons/md";           // History
 import { HiWrench } from "react-icons/hi2";           // Settings
 import { IoPerson } from "react-icons/io5";           // Profile
+import { GiElectric } from "react-icons/gi";          // Chronoamperometry (using a suitable icon)
 
 export const SIDEBAR_ITEMS = {
   categories: {
@@ -20,8 +21,13 @@ export const SIDEBAR_ITEMS = {
       },
       {
         icon: <MdScience />,
-        SidebarName: "Experimentation",
-        path: "/experimentation",
+        SidebarName: "Cyclic Voltammetry",
+        path: "/cyclic-voltammetry",  // Updated path
+      },
+      {
+        icon: <GiElectric />,  // Added Chronoamperometry tab with icon
+        SidebarName: "Chronoamperometry",
+        path: "/chronoamperometry",  // New path
       },
       {
         icon: <MdHistory />,
@@ -39,7 +45,8 @@ export const SIDEBAR_ITEMS = {
         icon: <IoPerson />,
         SidebarName: "Profile",
         path: "/profile",
-      }
+      },
+
     ],
   },
 };

@@ -15,15 +15,14 @@ import {
 
 const Plot = dynamic(() => import('react-plotly.js'), { ssr: false });
 
-const ExperimentationPage = () => {
+const ChronoamperometryPage = () => {
   const [formData, setFormData] = useState({
-    cycles: 3,
     startVoltage: 0,
-    endVoltage: 0,
-    maxVoltage: 100,
-    minVoltage: -100,
-    stepVoltage: 5,
-    scanRate: 100,
+    pulseAmplitude: 50,
+    pulseWidth: 10,
+    endVoltage: 100,
+    pulsePeriod: 100,
+    quietTime: 500,
   });
 
   const theme = useTheme();
@@ -44,13 +43,12 @@ const ExperimentationPage = () => {
 
   const handleReset = () => {
     setFormData({
-      cycles: 3,
       startVoltage: 0,
-      endVoltage: 0,
-      maxVoltage: 100,
-      minVoltage: -100,
-      stepVoltage: 5,
-      scanRate: 100,
+      pulseAmplitude: 50,
+      pulseWidth: 10,
+      endVoltage: 100,
+      pulsePeriod: 100,
+      quietTime: 500,
     });
   };
 
@@ -74,7 +72,7 @@ const ExperimentationPage = () => {
         align="center"
         sx={{ mb: 4 }}
       >
-        Experimentation
+        Chronoamperometry
       </Typography>
 
       <Grid container spacing={4}>
@@ -89,18 +87,17 @@ const ExperimentationPage = () => {
             }}
           >
             <Typography variant="h6" color="white" fontWeight={600} gutterBottom>
-              Experimentation Controls
+              Chronoamperometry Controls
             </Typography>
 
             <form onSubmit={handleSubmit}>
               {[
-                { label: '# cycles', name: 'cycles', min: 1 },
-                { label: 'Start voltage (mV)', name: 'startVoltage', min: -600, max: 600 },
-                { label: 'End voltage (mV)', name: 'endVoltage', min: -600, max: 600 },
-                { label: 'Max. voltage (mV)', name: 'maxVoltage', min: -600, max: 600 },
-                { label: 'Min. voltage (mV)', name: 'minVoltage', min: -600, max: 600 },
-                { label: 'Step voltage (mV)', name: 'stepVoltage', min: 1, max: 100 },
-                { label: 'Scan rate (mV/s)', name: 'scanRate', min: 1, max: 10000 },
+                { label: 'Start voltage (mV)', name: 'startVoltage', min: -1000, max: 1000 },
+                { label: 'Pulse amp. (mV)', name: 'pulseAmplitude', min: 1, max: 1000 },
+                { label: 'Pulse Width (ms)', name: 'pulseWidth', min: 1, max: 10000 },
+                { label: 'End voltage (mV)', name: 'endVoltage', min: -1000, max: 1000 },
+                { label: 'Pulse Period (ms)', name: 'pulsePeriod', min: 1, max: 10000 },
+                { label: 'Quiet Time (ms)', name: 'quietTime', min: 0, max: 10000 },
               ].map(({ label, name, min, max }) => (
                 <TextField
                   key={name}
@@ -176,11 +173,11 @@ const ExperimentationPage = () => {
               <Plot
                 data={[
                   {
-                    x: [0, 1, 2, 3],
-                    y: [0, 2, 1, 4],
+                    x: [0, 1, 2, 3, 4],
+                    y: [0.2, 0.3, 0.25, 0.4, 0.35],
                     type: 'scatter',
                     mode: 'lines+markers',
-                    marker: { color: 'red' },
+                    marker: { color: 'cyan' },
                   },
                 ]}
                 layout={{
@@ -188,7 +185,23 @@ const ExperimentationPage = () => {
                   paper_bgcolor: '#0f172a',
                   plot_bgcolor: '#0f172a',
                   font: { color: 'white' },
-                  margin: { t: 20, b: 40, l: 40, r: 20 },
+                  margin: { t: 20, b: 60, l: 70, r: 20 },
+                  xaxis: {
+                    title: {
+                      text: 'Time (ms)',
+                      font: {
+                        color: 'white',
+                      },
+                    },
+                  },
+                  yaxis: {
+                    title: {
+                      text: 'Current (µA)',
+                      font: {
+                        color: 'white',
+                      },
+                    },
+                  },
                 }}
                 useResizeHandler
                 style={{ width: '100%', height: '100%' }}
@@ -201,4 +214,4 @@ const ExperimentationPage = () => {
   );
 };
 
-export default ExperimentationPage;
+export default ChronoamperometryPage;
